@@ -30,7 +30,7 @@ def get_request(department_id):
     data = [
         (x[0], x[1]) for x in query_db("employees")
         if x[2] == department_id]
-    response = make_response(json.dumps(data))
+    response = make_response(json.dumps(data), {'Content-Type': 'application/json'})
     response.content_type = 'application/json'
     return response
 
