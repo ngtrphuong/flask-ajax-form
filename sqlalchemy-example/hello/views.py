@@ -31,6 +31,6 @@ def get_request(department_id):
         (employee.id, employee.name) for employee in employees 
         if employee.department_id == department_id
     ]
-    response = make_response(json.dumps(data))
+    response = make_response(json.dumps(data), {'Content-Type': 'application/json'})
     response.content_type = 'application/json'
     return response
